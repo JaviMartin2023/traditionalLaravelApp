@@ -18,6 +18,16 @@
         <label for="evolution">Evolution Level</label>
         <input value="{{old('evolution')}}" required type="number" class="form-control" id="evolution" name="evolution" placeholder="Evolution level">
     </div>
+    <div class="form-group">
+    <label for="weight">Peso</label>
+    <input required type="number" step="0.01" class="form-control" id="weight" name="weight" placeholder="Peso del Pokémon (kg)" value="{{ old('weight', $pokemon->weight ?? '') }}">
+    </div>
+
+    <div class="form-group">
+    <label for="height">Altura</label>
+    <input required type="number" step="0.01" class="form-control" id="height" name="height" placeholder="Altura del Pokémon (m)" value="{{ old('height', $pokemon->height ?? '') }}">
+</div>
+
     <button type="submit" class="btn btn-primary">Add Pokemon</button>
 </form>
 

@@ -21,6 +21,16 @@
         {{$pokemon->evolution}}
     </div>
     <div class="form-group">
+        Weight:
+        {{$pokemon->weight}}
+    </div>
+    <div class="form-group">
+        Height:
+        {{$pokemon->height}}
+    </div>
+
+
+    <div class="form-group">
         <a href="{{url()->previous()}}">back</a>
     </div>
 

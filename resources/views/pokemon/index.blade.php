@@ -11,6 +11,8 @@
                 <th>name</th>
                 <th>type</th>
                 <th>evolution</th>
+                <th>height</th>
+                <th>weight</th>
                 @if(session('user'))
                     <th>delete</th>
                     <th>edit</th>
@@ -25,13 +27,21 @@
                     <td>{{$pokemon->name}}</td>
                     <td>{{$pokemon->type}}</td>
                     <td>{{$pokemon->evolution}}</td>
+                    <td>{{$pokemon->height}}</td>
+                    <td>{{$pokemon->weight}}</td>
                     @if(session('user'))
                         <!-- Botón de eliminación, manteniendo el mismo estilo de Edit -->
                         <td>
                             <form action="{{ url('pokemon/' . $pokemon->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirmDelete();">Eliminar</button>
+                                <script>
+                                    function confirmDelete() {
+                                        return confirm("¿Estás seguro de que deseas eliminar este elemento?");
+                                    }
+                                </script>
+
                             </form>
                         </td>
                         <!-- Botón de edición sin cambiar el estilo -->
